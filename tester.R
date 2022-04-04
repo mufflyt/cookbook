@@ -85,12 +85,42 @@ library(exploratory)
 remotes::install_github("r-link/corrmorant")
 library(corrmorant)
 
+tm_write2pdf <- 
+  function(object, filename) {  
+    #pass filename and title with quotations, do not add .pdf
+    print("Function Sanity Check: Creating Arsenal Table as a PDF")
+    arsenal::write2pdf(object, (here::here("tables", (paste0(filename, ".pdf")))), 
+                       #puts the file into a subdirectory called tables
+                       keep.md = TRUE,
+                       quiet = TRUE) # passed to rmarkdown::render
+  }
 
-#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 
-#####  Directory
-#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### ####
-set_here(path = ".", verbose = TRUE)
-results_folder <- here("results")
-images_folder <- here("images")
-code_folder <- here("Code")
-data_folder <- "~/Dropbox/Nomogram (Personal)/nomogram/data/Archives/machine_readable/"
+tm_write2word <- function(object, filename) {  
+  #pass filename and title with quotations
+  print("Function Sanity Check: Creating Arsenal Table as a Word Document")
+  arsenal::write2word(object, (here::here("tables", (paste0(filename, ".doc")))),
+                      keep.md = TRUE,
+                      quiet = TRUE) # passed to rmarkdown::render
+}
+
+tm_t_test <- function(variable){
+  print("Function Sanity Test: t-test")
+  output <- stats::t.test(y=variable[train$Match_Status == "Matched"],
+                          x=variable[train$Match_Status == "Did not match"],
+                          alternative = ("two.sided"),
+                          paired = FALSE,
+                          conf.level = 0.95,
+                          var.equal = TRUE)
+  
+  print("X is group that did not match and Y is group that did match:")
+  return(output)
+}
+
+
+tm_chi_square_test <- function (variable) {
+  print("Function Sanity Test: chi-square test")
+  chisq <- stats::chisq.test(variable, train$Match_Status, correct = FALSE)
+  return(chisq)
+}
+
+
