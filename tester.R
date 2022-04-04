@@ -86,14 +86,14 @@ remotes::install_github("r-link/corrmorant")
 library(corrmorant)
 
 
-#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 
-#####  Directory
-#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### ####
-set_here(path = ".", verbose = TRUE)
-results_folder <- here("results")
-images_folder <- here("images")
-code_folder <- here("Code")
-data_folder <- "~/Dropbox/Nomogram (Personal)/nomogram/data/Archives/machine_readable/"
+#
+# Directory
+#
+#set_here(path = ".", verbose = TRUE)
+#results_folder <- here("results")
+#images_folder <- here("images")
+#code_folder <- here("Code")
+#data_folder <- "~/Dropbox/Nomogram (Personal)/nomogram/data/Archives/machine_readable/"
 
 
 print("All done!")
