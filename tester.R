@@ -30,7 +30,7 @@ tm_write2pdf <-
 #.libPaths("/Users/tylermuffly/.exploratory/R/4.1")
 
 # Install Packages ----
-pkgs <- (c('caret', 'readxl', 'XML', 'reshape2', 'devtools', 'tidyverse', 'magick', 'hms', 'tidyr', 'sjPlot', 'sjmisc', 'renv', 'knitr'))
+pkgs <- (c('caret', 'readxl', 'XML', 'reshape2', 'devtools', 'tidyverse', 'magick', 'hms', 'tidyr', 'sjPlot', 'sjmisc', 'knitr'))
 
 #install.packages(pkgs,dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), repos = "https://cloud.r-project.org")  #run this first time
 lapply(pkgs, require, character.only = TRUE)
@@ -38,6 +38,8 @@ rm(pkgs)
 
 #Renv stuff
 renv::settings$snapshot.type("all")
+install.packages("renv")
+library(renv)
 #renv::snapshot()
 
 # install.packages("remotes")
