@@ -37,7 +37,7 @@ lapply(pkgs, require, character.only = TRUE)
 rm(pkgs)
 
 #Renv stuff
-devtools::install_github("https://github.com/rstudio/renv")
+devtools::install_github("https://github.com/rstudio/renv",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), repos = "https://cloud.r-project.org")
 library(renv)
 
 renv::settings$snapshot.type("all")
