@@ -37,9 +37,11 @@ lapply(pkgs, require, character.only = TRUE)
 rm(pkgs)
 
 #Renv stuff
-renv::settings$snapshot.type("all")
 install.packages("renv")
 library(renv)
+
+renv::settings$snapshot.type("all")
+
 #renv::snapshot()
 
 # install.packages("remotes")
