@@ -30,14 +30,14 @@ tm_write2pdf <-
 #.libPaths("/Users/tylermuffly/.exploratory/R/4.1")
 
 # Install Packages ----
-pkgs <- (c('caret', 'readxl', 'XML', 'reshape2', 'devtools', 'tidyverse', 'magick', 'hms', 'tidyr', 'sjPlot', 'sjmisc', 'knitr'))
+pkgs <- (c('caret', 'readxl', 'XML', 'reshape2', 'devtools', 'tidyverse', 'magick', 'hms', 'tidyr', 'sjPlot', 'sjmisc', 'knitr', 'here'))
 
 #install.packages(pkgs,dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), repos = "https://cloud.r-project.org")  #run this first time
 lapply(pkgs, require, character.only = TRUE)
 rm(pkgs)
 
 #Renv stuff
-devtools::install_github("https://github.com/rstudio/renv",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), repos = "https://cloud.r-project.org")
+devtools::install_github("https://github.com/rstudio/renv",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), repos = "https://cloud.r-project.org", upgrade = c("always")))
 library(renv)
 
 renv::settings$snapshot.type("all")
@@ -69,22 +69,22 @@ knitr::opts_knit$set(global.par = T)
 if (packageVersion("devtools") < 1.6) {
   install.packages("devtools")
 }
-devtools::install_github("paulhendricks/anonymizer")
+devtools::install_github("paulhendricks/anonymizer", upgrade = c("always"))
 library(anonymizer)
 
-devtools::install_github("tidyverse/glue")
+devtools::install_github("tidyverse/glue", upgrade = c("always"))
 library(glue)
 
-install.packages("backports")
+install.packages("backports", upgrade = c("always"))
 library(backports)
 
 install.packages("psych")
 library(psych)
 
-devtools::install_github("exploratory-io/exploratory_func")
+devtools::install_github("exploratory-io/exploratory_func", upgrade = c("always"))
 library(exploratory)
 
-remotes::install_github("r-link/corrmorant")
+remotes::install_github("r-link/corrmorant", upgrade = c("always"))
 library(corrmorant)
 
 tm_write2pdf <- 
