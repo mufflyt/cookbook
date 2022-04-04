@@ -13,18 +13,6 @@ r["CRAN"] <- "http://cran.r-project.org"
 options(repos=r)
 })
 
-#Bespoke functions
-tm_write2pdf <- 
-  function(object, filename) {  
-    #pass filename and title with quotations, do not add .pdf
-    print("Function Sanity Check: Creating Arsenal Table as a PDF")
-    arsenal::write2pdf(object,(paste0(filename, ".pdf")), 
-                       #puts the file into a subdirectory called tables
-                       keep.md = TRUE,
-                       quiet = TRUE) # passed to rmarkdown::render
-    #pander::openFileInOS((paste0(filename, ".pdf"))) #sweet
-  }
-
 
 # Set libPaths ----
 #.libPaths("/Users/tylermuffly/.exploratory/R/4.1")
@@ -69,22 +57,22 @@ knitr::opts_knit$set(global.par = T)
 if (packageVersion("devtools") < 1.6) {
   install.packages("devtools")
 }
-devtools::install_github("paulhendricks/anonymizer", upgrade = c("always"))
+devtools::install_github("paulhendricks/anonymizer", dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), upgrade = c("always"))
 library(anonymizer)
 
-devtools::install_github("tidyverse/glue", upgrade = c("always"))
+devtools::install_github("tidyverse/glue",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), upgrade = c("always"))
 library(glue)
 
-install.packages("backports", upgrade = c("always"))
+install.packages("backports",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), upgrade = c("always"))
 library(backports)
 
-install.packages("psych")
+install.packages("psych",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), upgrade = c("always"))
 library(psych)
 
-devtools::install_github("exploratory-io/exploratory_func", upgrade = c("always"))
+devtools::install_github("exploratory-io/exploratory_func",dependencies = c("Depends", "Suggests", "Imports", "LinkingTo"), upgrade = c("always"))
 library(exploratory)
 
-remotes::install_github("r-link/corrmorant", upgrade = c("always"))
+remotes::install_github("r-link/corrmorant")
 library(corrmorant)
 
 tm_write2pdf <- 
