@@ -62,32 +62,3 @@ knitr::opts_chunk$set(fig.align = "center")
 # Set and preserve par(mfcol()) between chunks (calls to it can be hidden)
 knitr::opts_knit$set(global.par = T)
 
-
-#Loads up exploratory.io ----
-if (packageVersion("devtools") < 1.6) {
-  install.packages("devtools")
-}
-#devtools::install_github("paulhendricks/anonymizer")
-library(anonymizer)
-
-#devtools::install_github("tidyverse/glue")
-library(glue)
-
-#install.packages("backports")
-library(backports)
-
-#install.packages("psych")
-library(psych)
-
-#devtools::install_github("exploratory-io/exploratory_func")
-library(exploratory)
-
-remotes::install_github("r-link/corrmorant")
-library(corrmorant)
-
-print("All done!")
-
-
-
-
-
