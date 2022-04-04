@@ -125,4 +125,16 @@ tm_chi_square_test <- function (variable) {
   return(chisq)
 }
 
+#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 
+#####  Directory
+#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### ####
+set_here(path = ".", verbose = TRUE)
+results_folder <- here("results")
+images_folder <- here("images")
+code_folder <- here("Code")
+data_folder <- "~/Dropbox/Nomogram (Personal)/nomogram/data/Archives/machine_readable/"
 
+#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### #### 
+#####  CONSTANTS
+#### #### #### #### #### #### #### #### #### #### #### #### #### #### #### ####
+yvar <- "Match_Status"
