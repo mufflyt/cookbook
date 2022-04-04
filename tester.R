@@ -61,4 +61,3 @@ knitr::opts_chunk$set(fig.align = "center")
 
 # Set and preserve par(mfcol()) between chunks (calls to it can be hidden)
 knitr::opts_knit$set(global.par = T)
-
